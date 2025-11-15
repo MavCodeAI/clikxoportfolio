@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useParams } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import NotFound from '@/pages/NotFound';
 import { 
   Check, Code, Database, Bot, LineChart, Braces, Server, 
   BarChart, Brain, Cpu, GitBranch, CheckCircle, ArrowRight, Clock, Users, Target, Zap, Shield
@@ -48,399 +49,252 @@ interface ServiceData {
 }
 
 const servicesData: Record<string, ServiceData> = {
-  'web-app': {
-    id: 'web-app',
-    title: 'AI-Powered Web & App Development',
-    description: 'Custom web applications and mobile experiences powered by advanced AI algorithms and machine learning, designed to deliver exceptional user experiences and business results.',
+  'web-development': {
+    id: 'web-development',
+    title: 'Web Development',
+    description: 'Professional custom websites and web applications built with modern technologies for optimal performance and user experience.',
     icon: <Code className="w-10 h-10 text-mavintel-accent" />,
-    heroImage: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     features: [
       {
-        title: 'Intelligent UI/UX Design',
-        description: 'AI-driven interfaces that adapt to user behavior and preferences, delivering personalized experiences that improve engagement and conversion.',
-        icon: <Braces className="w-6 h-6 text-mavintel-accent" />
-      },
-      {
-        title: 'AI-Driven Content Generation',
-        description: 'Automated content creation and optimization systems that produce high-quality, relevant content tailored to your audience.',
-        icon: <Bot className="w-6 h-6 text-mavintel-purple" />
-      },
-      {
-        title: 'Smart Personalization Systems',
-        description: 'Advanced algorithms that analyze user behavior to deliver highly personalized experiences that increase engagement and conversion rates.',
-        icon: <Brain className="w-6 h-6 text-mavintel-cyan" />
-      },
-      {
-        title: 'Automated Testing & Optimization',
-        description: 'AI-powered testing frameworks that continuously monitor and optimize application performance, usability, and conversion paths.',
-        icon: <GitBranch className="w-6 h-6 text-mavintel-accent-light" />
-      }
-    ],
-    benefits: [
-      {
-        title: '35% Increase in User Engagement',
-        description: 'AI-powered interfaces adapt to user behavior, creating more engaging and intuitive experiences.'
-      },
-      {
-        title: '42% Higher Conversion Rates',
-        description: 'Smart personalization and optimization algorithms significantly improve conversion performance.'
-      },
-      {
-        title: '50% Faster Development Cycles',
-        description: 'AI-assisted development and automated testing accelerate time to market for new features.'
-      },
-      {
-        title: '28% Reduction in Support Requests',
-        description: 'Intelligent interfaces and predictive assistance reduce user confusion and support needs.'
-      }
-    ],
-    process: [
-      {
-        step: 1,
-        title: 'Discovery & Analysis',
-        description: 'We analyze your business goals, user needs, and technical requirements to create a comprehensive development strategy.',
-        icon: <Clock className="w-6 h-6 text-mavintel-accent" />
-      },
-      {
-        step: 2,
-        title: 'AI Strategy Integration',
-        description: 'Our team identifies optimal AI implementation opportunities within your application architecture.',
+        title: 'Responsive Design',
+        description: 'Mobile-first, responsive websites that look great on all devices and screen sizes.',
         icon: <Code className="w-6 h-6 text-mavintel-accent" />
       },
       {
-        step: 3,
-        title: 'Intelligent Design',
-        description: 'We create adaptable, AI-driven interface designs that respond to user behavior and preferences.',
-        icon: <CheckCircle className="w-6 h-6 text-mavintel-accent" />
-      },
-      {
-        step: 4,
-        title: 'Development & AI Integration',
-        description: 'Our developers build your application with integrated machine learning models and AI components.',
-        icon: <CheckCircle className="w-6 h-6 text-mavintel-accent" />
-      },
-      {
-        step: 5,
-        title: 'Testing & Optimization',
-        description: 'We use AI-powered testing frameworks to ensure performance, usability, and conversion optimization.',
-        icon: <CheckCircle className="w-6 h-6 text-mavintel-accent" />
-      },
-      {
-        step: 6,
-        title: 'Deployment & Continuous Learning',
-        description: 'After launch, your application continues to learn and improve based on real user interactions.',
-        icon: <ArrowRight className="w-6 h-6 text-mavintel-accent" />
-      }
-    ],
-    caseStudies: [
-      {
-        title: 'E-commerce Platform Transformation',
-        description: 'Implemented AI-powered recommendation engine and personalized shopping experiences.',
-        result: '42% increase in conversion rate and 37% improvement in customer retention.',
-        image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-      },
-      {
-        title: 'Mobile App Enhancement',
-        description: 'Added AI features to existing mobile app for better user engagement.',
-        result: '65% increase in user engagement and 28% higher app store rating.',
-        image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-      }
-    ]
-  },
-  'business': {
-    id: 'business',
-    title: 'Automated Business Solutions',
-    description: 'Transform your business processes with intelligent automation that continuously learns and improves, increasing efficiency and reducing operational costs.',
-    icon: <Database className="w-10 h-10 text-mavintel-purple" />,
-    heroImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    features: [
-      {
-        title: 'Workflow Automation',
-        description: 'Intelligent systems that streamline complex business processes, reducing manual work and increasing operational efficiency.',
-        icon: <GitBranch className="w-6 h-6 text-mavintel-accent" />
-      },
-      {
-        title: 'Document Processing AI',
-        description: 'Advanced machine learning models that extract, analyze, and process information from documents with high accuracy.',
+        title: 'E-commerce Solutions',
+        description: 'Full-featured online stores with secure payment processing and inventory management.',
         icon: <Server className="w-6 h-6 text-mavintel-purple" />
       },
       {
-        title: 'Predictive Maintenance',
-        description: 'AI systems that predict equipment failures before they occur, minimizing downtime and maintenance costs.',
-        icon: <Cpu className="w-6 h-6 text-mavintel-cyan" />
+        title: 'Content Management Systems',
+        description: 'Easy-to-use CMS platforms that let you update your website content without technical knowledge.',
+        icon: <Database className="w-6 h-6 text-mavintel-cyan" />
       },
       {
-        title: 'Intelligent Resource Allocation',
-        description: 'Optimization algorithms that ensure optimal allocation of human and material resources across your organization.',
-        icon: <BarChart className="w-6 h-6 text-mavintel-accent-light" />
+        title: 'Progressive Web Apps',
+        description: 'Fast, reliable web applications that work offline and provide app-like experiences.',
+        icon: <Zap className="w-6 h-6 text-mavintel-accent-light" />
       }
     ],
     benefits: [
       {
-        title: '65% Reduction in Manual Tasks',
-        description: 'Automated workflows eliminate repetitive tasks, allowing your team to focus on strategic initiatives.'
+        title: 'Fast Loading Times',
+        description: 'Optimized websites that load quickly, improving user experience and SEO rankings.'
       },
       {
-        title: '43% Lower Operational Costs',
-        description: 'Process optimization and predictive capabilities significantly reduce operational expenses.'
+        title: 'SEO Optimized',
+        description: 'Built with search engine optimization in mind to help your business get discovered online.'
       },
       {
-        title: '78% Faster Document Processing',
-        description: 'AI-powered document analysis dramatically accelerates information extraction and processing.'
+        title: 'Secure & Reliable',
+        description: 'Industry-standard security practices to keep your data and your customers safe.'
       },
       {
-        title: '39% Improved Resource Utilization',
-        description: 'Intelligent allocation ensures your resources are deployed where they create maximum value.'
+        title: 'Scalable Solutions',
+        description: 'Websites that grow with your business, handling increased traffic and functionality.'
       }
     ],
     process: [
       {
         step: 1,
-        title: 'Process Assessment',
-        description: 'We analyze your current business processes to identify automation opportunities and potential efficiency gains.',
-        icon: <Clock className="w-6 h-6 text-mavintel-purple" />
+        title: 'Requirement Analysis',
+        description: 'We understand your business goals, target audience, and technical requirements.',
+        icon: <Target className="w-6 h-6 text-mavintel-accent" />
       },
       {
         step: 2,
-        title: 'Solution Design',
-        description: 'Our team designs a custom automation solution tailored to your specific business needs and objectives.',
-        icon: <Code className="w-6 h-6 text-mavintel-purple" />
+        title: 'Design & Planning',
+        description: 'Create wireframes, mockups, and project roadmap for your approval.',
+        icon: <Braces className="w-6 h-6 text-mavintel-accent" />
       },
       {
         step: 3,
-        title: 'AI Model Development',
-        description: 'We develop and train machine learning models specific to your business processes and data types.',
-        icon: <CheckCircle className="w-6 h-6 text-mavintel-purple" />
+        title: 'Development',
+        description: 'Build your website using modern frameworks and best coding practices.',
+        icon: <Code className="w-6 h-6 text-mavintel-accent" />
       },
       {
         step: 4,
-        title: 'Integration & Implementation',
-        description: 'Our engineers integrate the automated solution with your existing systems and workflows.',
-        icon: <CheckCircle className="w-6 h-6 text-mavintel-purple" />
+        title: 'Testing & Launch',
+        description: 'Thorough testing across devices and browsers, then deploy to production.',
+        icon: <CheckCircle className="w-6 h-6 text-mavintel-accent" />
       },
       {
         step: 5,
-        title: 'Testing & Validation',
-        description: 'We rigorously test the solution to ensure accuracy, reliability, and performance under real-world conditions.',
-        icon: <CheckCircle className="w-6 h-6 text-mavintel-purple" />
-      },
-      {
-        step: 6,
-        title: 'Deployment & Continuous Improvement',
-        description: 'After deployment, we monitor performance and continuously refine the system based on operational feedback.',
-        icon: <ArrowRight className="w-6 h-6 text-mavintel-purple" />
+        title: 'Support & Maintenance',
+        description: 'Ongoing support, updates, and optimization to keep your site running smoothly.',
+        icon: <Shield className="w-6 h-6 text-mavintel-accent" />
       }
     ],
     caseStudies: [
       {
-        title: 'Manufacturing Process Automation',
-        description: 'Implemented AI-driven quality control and predictive maintenance.',
-        result: '65% reduction in quality defects and 43% decrease in downtime.',
-        image: 'https://images.unsplash.com/photo-1565514020179-026b92b2d70b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-      },
-      {
-        title: 'HR Process Optimization',
-        description: 'Automated recruitment and employee onboarding processes.',
-        result: '52% faster hiring process and 31% cost reduction in HR operations.',
-        image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+        title: 'E-commerce Platform',
+        description: 'Built a complete online store with payment gateway integration and inventory management.',
+        result: '150% increase in online sales within 6 months.',
+        image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
       }
     ]
   },
-  'analytics': {
-    id: 'analytics',
-    title: 'Intelligent Data Analytics',
-    description: 'Extract meaningful insights from your data with advanced analytics powered by cutting-edge AI, enabling data-driven decision making across your organization.',
-    icon: <LineChart className="w-10 h-10 text-mavintel-cyan" />,
-    heroImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+  'graphic-designing': {
+    id: 'graphic-designing',
+    title: 'Graphic Designing',
+    description: 'Creative and professional graphic design services to enhance your brand identity and visual communication across all platforms.',
+    icon: <Braces className="w-10 h-10 text-mavintel-purple" />,
+    heroImage: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     features: [
       {
-        title: 'Predictive Analytics',
-        description: 'Advanced algorithms that forecast future trends and outcomes based on historical data and market indicators.',
-        icon: <BarChart className="w-6 h-6 text-mavintel-accent" />
+        title: 'Logo & Brand Identity',
+        description: 'Unique logo designs and complete brand identity packages that make your business stand out.',
+        icon: <Target className="w-6 h-6 text-mavintel-purple" />
       },
       {
-        title: 'Real-time Data Visualization',
-        description: 'Interactive dashboards that present complex data in intuitive, actionable visualizations updated in real-time.',
-        icon: <LineChart className="w-6 h-6 text-mavintel-purple" />
+        title: 'Social Media Graphics',
+        description: 'Eye-catching graphics for social media posts, covers, and advertisements.',
+        icon: <Users className="w-6 h-6 text-mavintel-accent" />
       },
       {
-        title: 'Pattern Recognition',
-        description: 'Machine learning models that identify hidden patterns and correlations in large, complex datasets.',
-        icon: <Brain className="w-6 h-6 text-mavintel-cyan" />
+        title: 'Print Design',
+        description: 'Professional designs for business cards, brochures, flyers, and other print materials.',
+        icon: <CheckCircle className="w-6 h-6 text-mavintel-cyan" />
       },
       {
-        title: 'Actionable Business Intelligence',
-        description: 'Insights delivered in context with clear recommendations for business actions and strategic decisions.',
-        icon: <CheckCircle className="w-6 h-6 text-mavintel-accent-light" />
+        title: 'UI/UX Design',
+        description: 'User-friendly interface designs for websites and mobile applications.',
+        icon: <Braces className="w-6 h-6 text-mavintel-accent-light" />
       }
     ],
     benefits: [
       {
-        title: '58% More Accurate Forecasting',
-        description: 'AI-powered predictive models significantly outperform traditional forecasting approaches.'
+        title: 'Strong Brand Identity',
+        description: 'Create a memorable brand that resonates with your target audience.'
       },
       {
-        title: '47% Faster Decision Making',
-        description: 'Real-time insights and clear visualizations accelerate the decision-making process.'
+        title: 'Professional Image',
+        description: 'High-quality designs that establish credibility and trust with customers.'
       },
       {
-        title: '67% Improved Data Utilization',
-        description: 'Advanced analytics extract more value from existing data assets and sources.'
+        title: 'Better Engagement',
+        description: 'Visually appealing designs that capture attention and drive engagement.'
       },
       {
-        title: '32% Reduction in Business Risk',
-        description: 'Data-driven decisions based on comprehensive analytics reduce uncertainty and risk.'
+        title: 'Consistent Branding',
+        description: 'Cohesive visual identity across all your marketing materials.'
       }
     ],
     process: [
       {
         step: 1,
-        title: 'Data Assessment',
-        description: 'We evaluate your data sources, quality, and structure to determine the best analytics approach.',
-        icon: <Clock className="w-6 h-6 text-mavintel-cyan" />
+        title: 'Brief & Research',
+        description: 'Understand your brand, industry, and design preferences.',
+        icon: <Target className="w-6 h-6 text-mavintel-purple" />
       },
       {
         step: 2,
-        title: 'Model Development',
-        description: 'Our data scientists develop custom analytics models tailored to your specific business needs.',
-        icon: <Code className="w-6 h-6 text-mavintel-cyan" />
+        title: 'Concept Development',
+        description: 'Create initial design concepts for your review and feedback.',
+        icon: <Brain className="w-6 h-6 text-mavintel-purple" />
       },
       {
         step: 3,
-        title: 'Dashboard Creation',
-        description: 'We build intuitive, interactive dashboards that present insights in clear, actionable formats.',
-        icon: <CheckCircle className="w-6 h-6 text-mavintel-cyan" />
-      },
-      {
-        step: 4,
-        title: 'Integration & Training',
-        description: 'We integrate the analytics solution with your systems and train your team on its use.',
-        icon: <CheckCircle className="w-6 h-6 text-mavintel-cyan" />
-      },
-      {
-        step: 5,
-        title: 'Performance Monitoring',
-        description: 'We continuously monitor and optimize the analytics system for maximum effectiveness.',
-        icon: <CheckCircle className="w-6 h-6 text-mavintel-cyan" />
-      },
-      {
-        step: 6,
-        title: 'Continuous Improvement',
-        description: 'Regular updates and refinements ensure your analytics solution evolves with your business.',
-        icon: <ArrowRight className="w-6 h-6 text-mavintel-cyan" />
-      }
-    ],
-    caseStudies: [
-      {
-        title: 'Healthcare Analytics',
-        description: 'Implemented predictive analytics for patient care optimization.',
-        result: '28% reduction in readmission rates and 15% decrease in costs.',
-        image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-      },
-      {
-        title: 'Retail Analytics',
-        description: 'Added AI-powered inventory and sales forecasting.',
-        result: '35% reduction in stockouts and 22% increase in sales.',
-        image: 'https://images.unsplash.com/photo-1556742393-75e8fc197f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-      }
-    ]
-  },
-  'ai': {
-    id: 'ai',
-    title: 'Generative AI & Chatbot Integration',
-    description: 'Enhance customer engagement with AI-powered conversational interfaces and generative models that deliver personalized, helpful interactions at scale.',
-    icon: <Bot className="w-10 h-10 text-mavintel-accent-light" />,
-    heroImage: 'https://images.unsplash.com/photo-1677685384675-1428232b2cdb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    features: [
-      {
-        title: 'Custom AI Assistants',
-        description: 'Tailor-made virtual assistants designed to reflect your brand voice and meet your specific business needs.',
-        icon: <Bot className="w-6 h-6 text-mavintel-accent" />
-      },
-      {
-        title: 'Multi-lingual Support',
-        description: 'AI systems that can communicate fluently in multiple languages, expanding your global reach.',
+        title: 'Design Refinement',
+        description: 'Refine chosen concept based on your feedback and preferences.',
         icon: <Braces className="w-6 h-6 text-mavintel-purple" />
       },
       {
-        title: 'Context-aware Responses',
-        description: 'Advanced NLP models that understand context and user intent to provide relevant, helpful responses.',
-        icon: <Brain className="w-6 h-6 text-mavintel-cyan" />
+        step: 4,
+        title: 'Final Delivery',
+        description: 'Deliver final designs in all required formats and resolutions.',
+        icon: <CheckCircle className="w-6 h-6 text-mavintel-purple" />
+      }
+    ],
+    caseStudies: [
+      {
+        title: 'Restaurant Brand Identity',
+        description: 'Complete brand identity design including logo, menu, and marketing materials.',
+        result: 'Increased brand recognition by 80% in local market.',
+        image: 'https://images.unsplash.com/photo-1572044162444-ad60f128bdea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      }
+    ]
+  },
+  'digital-marketing': {
+    id: 'digital-marketing',
+    title: 'Digital Marketing',
+    description: 'Comprehensive digital marketing strategies to grow your online presence and reach your target audience effectively.',
+    icon: <LineChart className="w-10 h-10 text-mavintel-cyan" />,
+    heroImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    features: [
+      {
+        title: 'SEO Optimization',
+        description: 'Improve your search engine rankings and drive organic traffic to your website.',
+        icon: <BarChart className="w-6 h-6 text-mavintel-cyan" />
       },
       {
-        title: 'Integration with Business Systems',
-        description: 'Seamless connection with your CRM, ERP, and other systems for consistent, informed interactions.',
-        icon: <Server className="w-6 h-6 text-mavintel-accent-light" />
+        title: 'Social Media Marketing',
+        description: 'Engaging social media campaigns that build community and drive conversions.',
+        icon: <Users className="w-6 h-6 text-mavintel-purple" />
+      },
+      {
+        title: 'Content Marketing',
+        description: 'Create valuable content that attracts, engages, and converts your target audience.',
+        icon: <Bot className="w-6 h-6 text-mavintel-accent" />
+      },
+      {
+        title: 'Paid Advertising (PPC)',
+        description: 'Strategic paid advertising campaigns on Google, Facebook, and other platforms.',
+        icon: <Target className="w-6 h-6 text-mavintel-accent-light" />
       }
     ],
     benefits: [
       {
-        title: '70% Faster Customer Service',
-        description: 'AI assistants provide immediate responses to customer inquiries, reducing wait times.'
+        title: 'Increased Visibility',
+        description: 'Get found by more potential customers through improved online presence.'
       },
       {
-        title: '45% Increased Engagement',
-        description: 'Interactive, conversational interfaces drive higher user engagement and satisfaction.'
+        title: 'Higher ROI',
+        description: 'Data-driven strategies that maximize return on your marketing investment.'
       },
       {
-        title: '60% Cost Reduction in Support',
-        description: 'Automation of routine inquiries significantly reduces customer support costs.'
+        title: 'Better Customer Engagement',
+        description: 'Build relationships with your audience through targeted content.'
       },
       {
-        title: '24/7 Global Availability',
-        description: 'AI assistants provide consistent service across all time zones and languages.'
+        title: 'Measurable Results',
+        description: 'Track and analyze campaign performance with detailed analytics and reports.'
       }
     ],
     process: [
       {
         step: 1,
-        title: 'Conversational Design',
-        description: 'We design the conversational flow and personality of your AI assistant to match your brand and objectives.',
-        icon: <Clock className="w-6 h-6 text-mavintel-accent-light" />
+        title: 'Market Research',
+        description: 'Analyze your target audience, competitors, and market opportunities.',
+        icon: <LineChart className="w-6 h-6 text-mavintel-cyan" />
       },
       {
         step: 2,
-        title: 'Knowledge Base Development',
-        description: 'Our team creates a comprehensive knowledge base that powers your AI assistant\'s responses.',
-        icon: <Code className="w-6 h-6 text-mavintel-accent-light" />
+        title: 'Strategy Development',
+        description: 'Create a customized digital marketing strategy aligned with your goals.',
+        icon: <Target className="w-6 h-6 text-mavintel-cyan" />
       },
       {
         step: 3,
-        title: 'NLP Model Training',
-        description: 'We train and fine-tune language models to understand your specific industry terminology and context.',
-        icon: <CheckCircle className="w-6 h-6 text-mavintel-accent-light" />
+        title: 'Campaign Execution',
+        description: 'Launch and manage campaigns across selected digital channels.',
+        icon: <Zap className="w-6 h-6 text-mavintel-cyan" />
       },
       {
         step: 4,
-        title: 'System Integration',
-        description: 'Our engineers connect your AI assistant with relevant business systems and data sources.',
-        icon: <CheckCircle className="w-6 h-6 text-mavintel-accent-light" />
-      },
-      {
-        step: 5,
-        title: 'Testing & Refinement',
-        description: 'We conduct extensive testing across various scenarios to ensure accurate, helpful responses.',
-        icon: <CheckCircle className="w-6 h-6 text-mavintel-accent-light" />
-      },
-      {
-        step: 6,
-        title: 'Deployment & Continuous Learning',
-        description: 'After launch, your AI assistant continues to learn and improve from actual user interactions.',
-        icon: <ArrowRight className="w-6 h-6 text-mavintel-accent-light" />
+        title: 'Optimization & Reporting',
+        description: 'Continuously optimize campaigns and provide detailed performance reports.',
+        icon: <BarChart className="w-6 h-6 text-mavintel-cyan" />
       }
     ],
     caseStudies: [
       {
-        title: 'Financial Services Chatbot',
-        description: 'Implemented AI-powered virtual assistant for customer service.',
-        result: '52% improvement in query resolution time and 31% cost reduction.',
+        title: 'B2B Lead Generation',
+        description: 'SEO and content marketing campaign for software company.',
+        result: '300% increase in qualified leads within 4 months.',
         image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-      },
-      {
-        title: 'E-commerce AI Assistant',
-        description: 'Added AI-powered shopping assistant to e-commerce platform.',
-        result: '45% increase in customer satisfaction and 38% higher conversion rate.',
-        image: 'https://images.unsplash.com/photo-1556742393-75e8fc197f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
       }
     ]
   }
@@ -448,7 +302,7 @@ const servicesData: Record<string, ServiceData> = {
 
 const ServiceDetails = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
-  const service = servicesData[serviceId || 'web-app'];
+  const service = servicesData[serviceId || 'web-development'];
 
   if (!service) {
     return <NotFound />;

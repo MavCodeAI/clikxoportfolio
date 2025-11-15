@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-mavintel-accent via-mavintel-purple to-mavintel-cyan">
-                MavIntel
+                ClickXo
               </h2>
             </div>
             
@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
         
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-foreground/60">
-            &copy; {currentYear} MavIntel. All rights reserved.
+            &copy; {currentYear} ClickXo. All rights reserved.
           </p>
           
           <div className="flex space-x-6 mt-4 md:mt-0">

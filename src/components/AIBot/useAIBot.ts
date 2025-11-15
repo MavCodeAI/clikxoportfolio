@@ -33,7 +33,7 @@ export const useAIBot = () => {
     if (userMessage.toLowerCase().includes('pricing') || userMessage.toLowerCase().includes('cost')) {
       botResponse = "Our pricing is tailored to your specific needs. Generally, our AI solutions start at $1,500 per month. Would you like me to prepare a custom quote for you?";
     } else if (userMessage.toLowerCase().includes('service') || userMessage.toLowerCase().includes('help')) {
-      botResponse = "MavIntel offers AI-powered web development, business automation, data analytics, and chatbot integration services. Which area are you interested in learning more about?";
+      botResponse = "ClickXo offers professional Web Development, creative Graphic Designing, and strategic Digital Marketing services. Which service are you interested in learning more about?";
     } else if (userMessage.toLowerCase().includes('contact') || userMessage.toLowerCase().includes('talk')) {
       botResponse = "I'd be happy to connect you with our team. You can schedule a consultation by using our contact form, or I can gather some information and have someone reach out to you directly. What would you prefer?";
     } else if (userMessage.toLowerCase().includes('industry') || userMessage.toLowerCase().includes('work with')) {

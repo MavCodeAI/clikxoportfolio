@@ -80,7 +80,7 @@ const Navbar = () => {
     >
       <div className="container max-w-7xl mx-auto flex items-center justify-between">
         <a href="/" className="flex items-center space-x-2">
-          <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-mavintel-accent via-mavintel-purple to-mavintel-cyan">MavIntel</span>
+          <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-mavintel-accent via-mavintel-purple to-mavintel-cyan">ClickXo</span>
         </a>
         
         {/* Desktop Navigation */}
@@ -97,7 +97,7 @@ const Navbar = () => {
             href="/contact" 
             className="ml-4 px-4 py-2 rounded-lg bg-gradient-to-r from-mavintel-accent to-mavintel-purple text-white font-medium text-sm hover:opacity-90 transition-opacity"
           >
-            Start Your AI Journey
+            Get Started
           </a>
         </div>
         
