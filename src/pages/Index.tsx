@@ -19,8 +19,8 @@ const Index = () => {
     // Show welcome toast after a short delay
     const timer = setTimeout(() => {
       toast({
-        title: "Welcome to MavIntel",
-        description: "Experience the future of AI-driven solutions",
+        title: "Welcome to ClickXo",
+        description: "Professional Digital Services for Your Business",
         duration: 5000,
       });
     }, 2000);

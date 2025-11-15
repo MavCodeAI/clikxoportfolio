@@ -17,51 +17,39 @@ const Services: React.FC = () => {
 
   const services: Service[] = [
     {
-      id: 'web-app',
+      id: 'web-development',
       icon: <Code className="w-10 h-10 text-mavintel-accent" />,
-      title: 'AI-Powered Web & App Development',
-      description: 'Custom web applications and mobile experiences powered by advanced AI algorithms and machine learning.',
+      title: 'Web Development',
+      description: 'Custom websites and web applications built with modern technologies for optimal performance and user experience.',
       features: [
-        'Intelligent UI/UX Design',
-        'AI-Driven Content Generation',
-        'Smart Personalization Systems',
-        'Automated Testing & Optimization'
+        'Responsive Design',
+        'E-commerce Solutions',
+        'Content Management Systems',
+        'Progressive Web Apps'
       ]
     },
     {
-      id: 'business',
-      icon: <Database className="w-10 h-10 text-mavintel-purple" />,
-      title: 'Automated Business Solutions',
-      description: 'Transform your business processes with intelligent automation that continuously learns and improves.',
+      id: 'graphic-designing',
+      icon: <Braces className="w-10 h-10 text-mavintel-purple" />,
+      title: 'Graphic Designing',
+      description: 'Creative and professional graphic design services to enhance your brand identity and visual communication.',
       features: [
-        'Workflow Automation',
-        'Document Processing AI',
-        'Predictive Maintenance',
-        'Intelligent Resource Allocation'
+        'Logo & Brand Identity',
+        'Social Media Graphics',
+        'Print Design',
+        'UI/UX Design'
       ]
     },
     {
-      id: 'analytics',
+      id: 'digital-marketing',
       icon: <LineChart className="w-10 h-10 text-mavintel-cyan" />,
-      title: 'Intelligent Data Analytics',
-      description: 'Extract meaningful insights from your data with advanced analytics powered by cutting-edge AI.',
+      title: 'Digital Marketing',
+      description: 'Comprehensive digital marketing strategies to grow your online presence and reach your target audience.',
       features: [
-        'Predictive Analytics',
-        'Real-time Data Visualization',
-        'Pattern Recognition',
-        'Actionable Business Intelligence'
-      ]
-    },
-    {
-      id: 'ai',
-      icon: <Bot className="w-10 h-10 text-mavintel-accent-light" />,
-      title: 'Generative AI & Chatbot Integration',
-      description: 'Enhance customer engagement with AI-powered conversational interfaces and generative models.',
-      features: [
-        'Custom AI Assistants',
-        'Multi-lingual Support',
-        'Context-aware Responses',
-        'Integration with Business Systems'
+        'SEO Optimization',
+        'Social Media Marketing',
+        'Content Marketing',
+        'Paid Advertising (PPC)'
       ]
     }
   ];
@@ -104,7 +92,7 @@ const Services: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="inline-block py-1 px-3 rounded-full bg-mavintel-accent/10 text-mavintel-accent text-sm font-medium mb-4"
           >
-            Our Services
+            ہماری خدمات
           </motion.div>
           
           <motion.h2
@@ -114,7 +102,7 @@ const Services: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            <span className="text-gradient">AI-Powered Services</span>
+            <span className="text-gradient">Professional Digital Services</span>
           </motion.h2>
           
           <motion.p
@@ -126,14 +114,23 @@ const Services: React.FC = () => {
           >
             Transforming businesses through innovative AI solutions, tailored to meet your specific needs and challenges.
           </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-foreground/70 max-w-2xl mx-auto"
+          >
+            We offer comprehensive digital solutions to help your business succeed online.
+          </motion.p>
         </div>
-        
+
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
         >
           {services.map((service) => (
             <motion.div

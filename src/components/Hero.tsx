@@ -1,17 +1,17 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
-import { ArrowRight, Bot, Brain, FlaskConical, Rocket, Sparkles } from 'lucide-react';
+import { ArrowRight, Bot, Brain, FlaskConical, Rocket, Sparkles, Code, Braces } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Hero: React.FC = () => {
   const [headline, setHeadline] = useState("AI-Driven Digital Evolution");
   const [currentHeadlineIndex, setCurrentHeadlineIndex] = useState(0);
   const headlines = [
-    "AI-Driven Digital Evolution",
-    "Transforming Ideas Into Intelligent Solutions",
-    "AI For Business Growth",
-    "Intelligent Digital Experiences"
+    "Professional Web Development",
+    "Creative Graphic Designing",
+    "Strategic Digital Marketing",
+    "Complete Digital Solutions"
   ];
   const containerRef = useRef<HTMLDivElement>(null);
   const inView = useInView(containerRef, { once: false });
@@ -132,7 +132,7 @@ const Hero: React.FC = () => {
             <div className="inline-block py-1 px-3 rounded-full bg-mavintel-accent/10 text-mavintel-accent text-sm font-medium mb-4 border border-mavintel-accent/20 backdrop-blur-sm shadow-lg shadow-mavintel-accent/5">
               <span className="flex items-center">
                 <Sparkles size={14} className="mr-1.5 animate-pulse" />
-                The Future of AI Solutions
+                Professional Digital Services
               </span>
             </div>
           </motion.div>
@@ -176,7 +176,7 @@ const Hero: React.FC = () => {
               href="#contact"
               className="px-6 py-3 rounded-lg bg-gradient-to-r from-mavintel-accent to-mavintel-purple text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-mavintel-accent/20 flex items-center justify-center space-x-2 group"
             >
-              <span>Start Your AI Journey</span>
+              <span>Get Started</span>
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
             </a>
             <button
@@ -196,10 +196,9 @@ const Hero: React.FC = () => {
           transition={{ staggerChildren: 0.1, delayChildren: 0.3 }}
         >
           {[
-            { icon: <Brain className="w-8 h-8 text-mavintel-accent" />, label: "AI Solutions" },
-            { icon: <Bot className="w-8 h-8 text-mavintel-purple" />, label: "Smart Automation" },
-            { icon: <FlaskConical className="w-8 h-8 text-mavintel-cyan" />, label: "Data Intelligence" },
-            { icon: <Rocket className="w-8 h-8 text-mavintel-accent-light" />, label: "Digital Growth" }
+            { icon: <Code className="w-8 h-8 text-mavintel-accent" />, label: "Web Development" },
+            { icon: <Braces className="w-8 h-8 text-mavintel-purple" />, label: "Graphic Design" },
+            { icon: <Rocket className="w-8 h-8 text-mavintel-cyan" />, label: "Digital Marketing" }
           ].map((item, i) => (
             <motion.div
               key={i}
@@ -232,7 +231,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           >
             <div className="h-2 w-2 rounded-full bg-green-400 animate-pulse"></div>
-            <p className="text-sm font-medium text-white">Discover how AI can transform your business</p>
+            <p className="text-sm font-medium text-white">Transform your digital presence today</p>
             <a href="#contact" className="text-xs font-semibold bg-white/20 hover:bg-white/30 transition-colors px-3 py-1 rounded-full text-white">
               Learn More
             </a>
